@@ -1,0 +1,28 @@
+
+<app-profil></app-profil>
+<section class="flex gap-4   mx-auto my-auto w-max ">
+<div class="flex shadow-[0_0_15px_rgba(0,0,0,0.25)] flex-col gap-3  p-9 w-max rounded-sm  ">
+  <h1 class="font-bold">1.Type primitifs</h1>
+  <p>Note maximale: <span class="border p-2 w-max text-white rounded-sm bg-black">{{noteMax}}</span> </p>
+<p>Score actuel: <span></span> {{scoreActuel}}</p>
+<p>Pourcentage:{{pourcentage}}</p>
+
+</div>
+
+
+<div class="flex flex-col gap-3 shadow-[0_0_15px_rgba(0,0,0,0.25)]  p-9 w-max rounded-sm  ">
+  <h1>1.Object & Méthode</h1>
+
+  <p>Rôle: {{role.travail}}</p>
+
+  <p>Nom complet (Methode):{{role.NomComplet()}}</p>
+   @if(role.isActif){<p class="border p-2 bg-green-600 w-max rounded-sm text-white font-semibold">Status: Actif</p>}
+  @else {<p class="border p-2 bg-red-600 w-max rounded-sm text-white font-semibold">Status: Inactif</p>}
+</div>
+<div class="flex flex-col gap-3  p-9 w-max rounded-sm  shadow-[0_0_15px_rgba(0,0,0,0.25)]">
+  <h1>3. Tableau(Array)</h1>
+    <p>Première competence (skills[0]):  <span class="border p-2 w-max text-blue-400 rounded-sm border-blue-400">{{skills[0]}}</span>  </p>
+    <p>Toutes les compétences (.join):  {{skills.join('+')}}</p>
+
+</div>
+</section>

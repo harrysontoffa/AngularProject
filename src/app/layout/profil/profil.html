@@ -1,12 +1,17 @@
 
 
 <div class=" mx-auto mb-5 flex shadow-[0_0_15px_rgba(0,0,0,0.25)] flex-col gap-2  w-max rounded-sm ">
-  <img class="w-full h-64   object-cover rounded-lg" src="{{user1.imageUrl}}" alt="">
+  <img class="w-full h-64   object-cover " src="{{user1.imageUrl}}" alt="">
  <p class="font-semibold px-3 text-2xl text-purple-700"> {{user1.name}}</p>
  <p class="font-semibold px-3">Github: <span class="font-normal">{{user1.github}}</span> </p>
  <p class="font-semibold px-3">Status: <span class="font-normal">{{user1.status}}</span> </p>
  <p class="font-semibold px-3">Âge: <span class="font-normal">{{user1.age}}</span> </p>
  <p class="font-semibold px-3 max-w-2xl">Bio: <span class="font-normal">{{user1.bio}}</span> </p>
- <p class="font-semibold px-3 pb-3">Reputation: <span class="font-normal">{{user1.reputation}}</span> </p>
+ <p class="font-semibold px-3 ">Reputation: <span class="font-normal">{{user1.reputation}}</span> </p>
+ <p class="px-3"> Count number: {{user1.count}}</p>
+ <div class="flex px-3 gap-2 pb-3">
+  <button class="p-2 w-max bg-blue-500 rounded-sm text-white" (click)="incrementCount()" >click pour incrémenter</button>
+  <button class="p-2 w-max bg-red-500 rounded-sm text-white" (click)="decrementerCount()" >click pour décrémenter</button>
+</div>
 
 </div>

@@ -1,0 +1,82 @@
+
+
+<div class="w-max gap-16 flex items-center p-3 shadow-[0_0_15px_rgba(0,0,0,0.3)]  mx-auto mb-4 rounded-sm" >
+  <input [(ngModel)]="libelleTache" type="text" class="w-max h-10 border-gray-300 border p-2 rounded-sm" placeholder="entrez libellé tâche...">
+  <select [(ngModel)]="categorieSelectionne" class="p-2 border rounded-sm border-gray-300 " name="choixCategorie" >
+    <option value="">Veuillez choisir une option categorie</option>
+    <option value="travail">Travail</option>
+    <option value="urgent">Urgent</option>
+    <option value="personnel">Personnel</option>
+  </select>
+  <button (click)="ajoutTache()" class="w-max bg-blue-600 p-3 rounded-sm text-white font-semibold">Ajouter</button>
+</div>
+<section class="flex flex-col gap-3 w-max mx-auto mb-5 min-w-180 p-5 shadow-[0_0_15px_rgba(0,0,0,0.3)]">
+  <h1 class="text-purple-500 font-semibold text-3xl">Mes taches</h1>
+  <div class="flex gap-3 w-max">
+    <button (click)="categorySelectionner ='travail'; filtrerParCategori() " class="w-max bg-blue-400 p-3 rounded-sm text-white font-semibold">Travail</button>
+    <button (click)="categorySelectionner = 'urgent'; filtrerParCategori() " class="w-max bg-green-400 p-3 rounded-sm text-white font-semibold">Urgent</button>
+    <button (click)="categorySelectionner= 'personnel'; filtrerParCategori() " class="w-max bg-pink-400 p-3 rounded-sm text-white font-semibold">Personnel</button>
+    <button (click)="categorySelectionner= 'tout';filtrerParCategori()" class="w-max bg-purple-400 p-3 rounded-sm text-white font-semibold">Tout</button>
+  </div>
+  <div *ngFor="let tache of listFiltre; let index=index; trackBy: TrackByid" class="shadow-[0_0_15px_rgba(0,0,0,0.3)] w-170 p-3 flex gap-4 justify-between items-center ">
+    <div class="flex items-center gap-3 w-max">
+      <input (click)="tache.isComplete = !tache.isComplete" [checked]="tache.isComplete"  type="checkbox"class='rounded-sm'>
+      <h1 [ngClass]="{'line-through': tache.isComplete, 'text-black': !tache.isComplete, 'text-gray-500': tache.isComplete}" class="font-semibold">{{tache.titre}}</h1>
+      <p>{{tache.dateCreation  | date:'dd/MM/yyyy HH:mm'}}</p>
+    </div>
+    <button (click)="SupprimerTache(tache.id)"  class="w-max bg-red-500 p-3 rounded-sm text-white font-semibold">Supprimer</button>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="flex flex-col  mb-5 shadow-[0_0_15px_rgba(0,0,0,0.3)]  w-max p-5 mx-auto rounded-sm gap-3">
+    <div class="flex   gap-3">
+      <button (click)="categorySelectionee = 'travail'; filtrerParCategory() " class="w-max p-3 bg-blue-400 rounded-sm text-white font-semibold">Travail</button>
+      <button (click)="categorySelectionee = 'urgent'; filtrerParCategory()"  class="w-max p-3 bg-red-400 rounded-sm text-white font-semibold">Urgent</button>
+      <button (click)="categorySelectionee = 'personnel'; filtrerParCategory() "  class="w-max p-3 bg-pink-400 rounded-sm text-white font-semibold">Personnel</button>
+      <button (click)="categorySelectionee = 'tout'; filtrerParCategory() "  class="w-max p-3 bg-purple-400 rounded-sm text-white font-semibold">Tout</button>
+    </div>
+      <div class=" w-max flex flex-col gap-4">
+        @if(categorySelectionee){
+          <div *ngFor="let tache of listeFiltrerParCategorie; let index = index; trackBy: trackById" class="flex   p-3 justify-center rounded-sm items-center shadow-[0_0_15px_rgba(0,0,0,0.3)] gap-3 w-180" >
+            <input type="checkbox" class="border rounded-sm">
+            <p>{{tache.titre}}</p>
+            <p>{{tache.dateCreation}}</p>
+            <button (click)="suppElmt(tache.id)" class="w-max p-3 bg-red-400 rounded-sm text-white font-semibold">supprimer</button>
+          </div>
+        }
+        @else{
+          <p>Choisisez un filtre pour voir les taches</p>
+        }
+
+      </div>
+</div> -->
+
+
+
+
+

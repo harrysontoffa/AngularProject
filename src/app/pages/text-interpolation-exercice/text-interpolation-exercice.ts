@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Profil } from '../../layout/profil/profil';
+import { EventBiding } from '../../layout/event-biding/event-biding';
 
 // interface Student {
 //   firstName: string;
@@ -10,7 +11,7 @@ import { Profil } from '../../layout/profil/profil';
 
 
 @Component({
-  imports: [Profil],
+  imports: [Profil, EventBiding],
   selector: 'app-text-interpolation-exercice',
   styleUrl: './text-interpolation-exercice.css',
   templateUrl: './text-interpolation-exercice.html',

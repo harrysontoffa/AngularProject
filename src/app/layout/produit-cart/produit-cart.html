@@ -1,0 +1,23 @@
+<section class="flex flex-col gap-5 p-3 w-max rounded-sm shadow-[0_0_15px_rgba(0,0,0,0.25)] border border-gray-500">
+<div class="w-max">
+  <h1 class="font-bold text-2xl">{{data.nom}}</h1>
+  <p class="text-gray-600">Confortable et idéale pour tous les jours</p>
+ </div>
+<div class="flex gap-40  items-center">
+  <p class="text-gray-600">Prix unitaire</p>
+  <p class="text-2xl">{{data.prix}}</p>
+</div>
+<div class="flex gap-2 w-max">
+
+    <button (click)="AugmenterQuantite()" class="w-max min-w-10 bg-blue-600 text-white  p-2 rounded-sm font-semibold" >+</button>
+    <div class="w-max p-2 border border-gray-600 rounded-sm ">{{data.quantite}}</div>
+    <button (click)="DiminuerQuantite()" class="w-max min-w-10 bg-pink-600 text-white  p-2 rounded-sm font-semibold" >-</button>
+</div>
+<div class="flex gap-40 items-center">
+  <p class="text-gray-600">Prix total</p>
+  <p class="text-3xl text-green-700">{{data.prix * data.quantite}}</p>
+</div>
+    <button (click)="SuppressionProduit()" class="w-max min-w-10 bg-pink-600 text-white  p-2 rounded-sm font-semibold" >Supprimer</button>
+
+
+</section>

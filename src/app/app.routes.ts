@@ -18,6 +18,9 @@ export const routes: Routes = [
   {path: 'interpolation',
     loadComponent: () => import('./pages/text-interpolation-exercice/text-interpolation-exercice').then(m =>m.TextInterpolationExercice),
   },
+  {path: 'exoEventEmit',
+    loadComponent: () => import('./pages/exo-event-emit/exo-event-emit').then(m =>m.ExoEventEmit),
+  },
   // gestion de pages non trouver afficher ceette page a la place
   {path: '**',
     loadComponent: () => import('./pages/not-found/not-found').then(m =>m.NotFound),

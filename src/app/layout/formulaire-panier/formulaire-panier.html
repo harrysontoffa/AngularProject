@@ -1,0 +1,14 @@
+<section  class="flex flex-col gap-5 p-3 w-max rounded-sm shadow-[0_0_15px_rgba(0,0,0,0.25)] border border-gray-500">
+  <form (ngSubmit)="Onsubmit">
+    <label >id</label>
+    <input class="w-50 p-2 border border-gray-600 rounded-sm" [(ngModel)]="idProduit"  placeholder="id" type="text" name="id">
+    <label >name</label>
+    <input class="w-50 p-2 border border-gray-600 rounded-sm" [(ngModel)]="nomProduit" placeholder="nom" type="text" name="nom">
+    <label >prix</label>
+    <input class="w-50 p-2 border border-gray-600 rounded-sm" [(ngModel)]="prixProduit" placeholder="prix" type="text" name="prix">
+    <label >quantite</label>
+    <input class="w-50 p-2 border border-gray-600 rounded-sm" [(ngModel)]="quantiteProduit" placeholder="quantite" type="text" name="quantite">
+    <button class="w-max bg-blue-700 font-semibold text-white p-2" (click)="handleOnSubmit()"  type="submit">Ajouter</button>
+  </form>
+
+</section>

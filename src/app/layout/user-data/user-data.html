@@ -1,0 +1,7 @@
+<div class="flex flex-col gap-5 p-4">
+  <form  (ngSubmit)="handlesubmite()">
+    <input class="border border-gray-600 bg-white p-3 w-300 h-20 rounded-sm" placeholder="votre nom" [(ngModel)]="libelle" type="text" name="libelle">
+    <input class="border border-gray-600 bg-white p-3 w-300 h-20 rounded-sm" placeholder="0" [(ngModel)]="age" type="number" name="age">
+    <button class="border bg-blue-700 font-semibold rounded-sm w-max p-2" type="submit">MAJ des datas</button>
+  </form>
+</div>

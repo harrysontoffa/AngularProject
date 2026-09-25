@@ -1,3 +1,7 @@
  <!-- ici product card atends un objet {id: , nom, prix, quantite}. on sait que chaque element de notre liste dee tache possede ces proiete
 pour pouvoir acceder a nos proprietes nous devont utiliser le ngFor let produit pour pouvoir selectionner un elemnt de notre tableau et l appliquer a nnotre product card -->
+
+<app-formulaire-panier (Onsubmit)="HandleAjoutProduit($event)" ></app-formulaire-panier>
+<div class="flex grid-cols-2">
 <app-produit-cart (produitSupprimer)="handleSuppression($event)" (quantiteChanged)="handleQuantityChange($event)" *ngFor="let produit of listeProduits; trackBy: TrackById " [data]="produit" ></app-produit-cart>
+</div>

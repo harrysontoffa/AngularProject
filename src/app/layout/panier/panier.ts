@@ -2,10 +2,11 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProduitCart } from '../produit-cart/produit-cart';
 import type { Produit } from '../produit-cart/produit-cart';
+import { FormulairePanier } from '../formulaire-panier/formulaire-panier';
 
 
 @Component({
-  imports: [ProduitCart, CommonModule],
+  imports: [ProduitCart, CommonModule, FormulairePanier],
   selector: 'app-panier',
   styleUrl: './panier.css',
   templateUrl: './panier.html',
@@ -70,6 +71,17 @@ export class Panier {
     }
     return
 
+  }
+
+
+  HandleAjoutProduit(event:{id:number,nom:string,prix:number,quantite:number}){
+    this.listeProduits.push({
+      id:event.id,
+      nom:event.nom,
+      prix:event.prix,
+      quantite:event.quantite
+        })
+        return this.listeProduits
   }
 
 
